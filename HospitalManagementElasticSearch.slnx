@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="HospitalManagementElasticSearch.Application/HospitalManagementElasticSearch.Application.csproj" />
+  <Project Path="HospitalManagementElasticSearch.Domain/HospitalManagementElasticSearch.Domain.csproj" />
+  <Project Path="HospitalManagementElasticSearch.Infrastructure/HospitalManagementElasticSearch.Infrastructure.csproj" />
+  <Project Path="HospitalManagementElasticSearch/HospitalManagementElasticSearch.API.csproj" />
+</Solution>
