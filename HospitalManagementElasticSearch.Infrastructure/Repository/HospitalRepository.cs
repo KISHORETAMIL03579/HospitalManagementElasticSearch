@@ -62,5 +62,21 @@ namespace HospitalManagementElasticSearch.Infrastructure.Repository
         {
             await _client.DeleteAsync(IndexName, id.ToString());
         }
+
+        public async Task<Hospital?> GetByNameAsync(string name)
+        {
+            var response = await _client.SearchAsync<Hospital>(s => s
+                .Indices(IndexName)
+                .Query(q => q
+                    .Match(m => m
+                        .Field(f => f.Name)
+                        .Query(name) // case-insensitive because of lowercase analyzer
+                    )
+                )
+                .Size(1) // only need one hospital
+            );
+
+            return response.Hits.FirstOrDefault()?.Source;
+        }
     }
 }

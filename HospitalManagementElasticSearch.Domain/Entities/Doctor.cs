@@ -9,7 +9,7 @@ namespace HospitalManagementElasticSearch.Domain.Entities
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Name { get; set; } = string.Empty;
         public string Specialization { get; set; } = string.Empty;
-        public string HospitalName { get; set; } = string.Empty;
+        public Guid HospitalId { get; set; }
         public Hospital Hospital { get; set; } = null!;
     }
 }

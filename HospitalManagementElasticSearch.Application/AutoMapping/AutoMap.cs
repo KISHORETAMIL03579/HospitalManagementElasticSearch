@@ -21,6 +21,17 @@ namespace HospitalManagementElasticSearch.Application.AutoMapping
             // UpdateDTO → Entity
             CreateMap<HospitalUpdateDTO, Hospital>()
                 .ForAllMembers(opt => opt.Condition((src, dest, srcMember) => srcMember != null));
+
+            CreateMap<Doctor, DoctorDTO>()
+                .ForMember(dest => dest.HospitalName, opt => opt.MapFrom(src => src.Hospital.Name));
+
+            CreateMap<DoctorCreateDTO, Doctor>().ReverseMap();
+
+            CreateMap<DoctorUpdateDTO, Doctor>()
+                .ForMember(dest => dest.HospitalId, opt => opt.Ignore())
+                .ForMember(dest => dest.Hospital, opt => opt.Ignore())
+                .ForAllMembers(opt => opt.Condition((src, dest, srcMember) => srcMember != null));
+
         }
     }
 }

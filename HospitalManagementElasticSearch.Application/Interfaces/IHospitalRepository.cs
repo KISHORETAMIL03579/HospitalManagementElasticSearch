@@ -12,5 +12,6 @@ namespace HospitalManagementElasticSearch.Application.Interfaces
         Task Create(Hospital hospital);
         Task UpdateById(Guid id, Hospital hospital);
         Task DeleteById(Guid id);
+        Task<Hospital?> GetByNameAsync(string name);
     }
 }

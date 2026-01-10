@@ -44,9 +44,13 @@ builder.Services.AddAutoMapper(typeof(AutoMap).Assembly);
 
 // Register Repositories
 builder.Services.AddScoped<IHospitalRepository, HospitalRepository>();
+builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
 
 // Register Services
 builder.Services.AddScoped<IHospitalService, HospitalService>();
+builder.Services.AddScoped<IDoctorService, DoctorService>();
+
+// Build the app
 var app = builder.Build();
 
 // Create Elasticsearch indices on startup
