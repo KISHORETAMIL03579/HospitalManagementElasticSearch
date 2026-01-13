@@ -18,6 +18,8 @@ namespace HospitalManagementSystem.Infrastructure.Data
             _logger = logger;
         }
 
+        #region Create All Indices
+
         // Create all indices
         public async Task<bool> CreateAllIndicesAsync()
         {
@@ -34,6 +36,9 @@ namespace HospitalManagementSystem.Infrastructure.Data
             }
         }
 
+        #endregion
+
+        #region Create Hospital Index
         // Create hospital index
         public async Task<bool> CreateHospitalIndexAsync()
         {
@@ -88,6 +93,9 @@ namespace HospitalManagementSystem.Infrastructure.Data
         
         }
 
+        #endregion
+
+        #region Delete Hospital By Id
         // Delete hospital by id
         public async Task<bool> DeleteHospitalAsync(Guid id)
         {
@@ -110,6 +118,10 @@ namespace HospitalManagementSystem.Infrastructure.Data
                 return false;
             }
         }
+
+        #endregion
+
+        #region Create Doctor Index
 
         // Create doctor index
         public async Task<bool> CreateDoctorIndexAsync()
@@ -157,6 +169,9 @@ namespace HospitalManagementSystem.Infrastructure.Data
             return response.IsValidResponse;
         }
 
+        #endregion
+
+        #region Delete Doctor By Id
         // Delete doctor by id
         public async Task<bool> DeleteDoctorAsync(Guid id)
         {
@@ -178,6 +193,9 @@ namespace HospitalManagementSystem.Infrastructure.Data
             }
         }
 
+        #endregion
+
+        #region Delete All Indices
         // Delete all indicies
         public async Task<bool> DeleteAllIndicesAsync()
         {
@@ -200,5 +218,9 @@ namespace HospitalManagementSystem.Infrastructure.Data
 
             return hospitalDeleted && doctorDeleted;
         }
+
+        #endregion
+
     }
 }
+
