@@ -179,7 +179,7 @@ namespace HospitalManagementSystem.Infrastructure.Data
         }
 
         // Delete all indicies
-        public async Task<bool> DeleteAllIndiciesAsync()
+        public async Task<bool> DeleteAllIndicesAsync()
         {
             var hospitalDeleted = true;
             var doctorDeleted = true;
